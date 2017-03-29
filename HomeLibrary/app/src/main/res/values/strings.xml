@@ -3,4 +3,6 @@
     <string name="example_title">Przykładowy Tytuł</string>
     <string name="example_author">Przykładowy Autor</string>
     <string name="example_date">26.01.1996</string>
+    <string name="nav_name">Bibloteka Domowa</string>
+
 </resources>
