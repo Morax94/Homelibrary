@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add_book"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="@string/nav_add_book_text" />
+        <item
+            android:id="@+id/nav_browse"
+            android:icon="?android:attr/actionModePasteDrawable"
+            android:title="@string/nav_browse_book_text" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="@string/nav_search_text" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="@string/nav_help_text" />
+    </group>
+
+</menu>

@@ -4,5 +4,23 @@
     <string name="example_author">Przykładowy Autor</string>
     <string name="example_date">26.01.1996</string>
     <string name="nav_name">Bibloteka Domowa</string>
+    <string name="title_activity_home">Bibloteka Domowa</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_add_book_text">Dodaj książkę</string>
+    <string name="nav_browse_book_text">Przeglądaj książki</string>
+    <string name="nav_search_text">Wyszukaj</string>
+    <string name="nav_help_text">Pomoc</string>
+
+    <string name="action_delete">Usuń</string>
+    <string name="action_edit">Edytuj</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_details">Domowa Bibloteka</string>
+    <string name="details_autor">Autor:</string>
+    <string name="details_data">Data wydania:</string>
+    <string name="details_publisher">Wydawnictwo:</string>
+    <string name="detalis_page">Ilość stron:</string>
+    <string name="details_description">Opis:</string>
 
 </resources>
