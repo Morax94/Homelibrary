@@ -23,4 +23,11 @@
     <string name="detalis_page">Ilość stron:</string>
     <string name="details_description">Opis:</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="example_publisher">PWN</string>
+    <string name="example_page">100</string>
+    <string name="example_description">Opis.Opis.Opis</string>
+    <string name="contentDescription">książka</string>
+
 </resources>
