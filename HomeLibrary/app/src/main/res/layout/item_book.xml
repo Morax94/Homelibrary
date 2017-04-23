@@ -7,7 +7,7 @@
     android:weightSum="1">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/book_imageView"
         android:layout_width="63dp"
         android:layout_height="69dp"
         android:layout_weight="0.88"
@@ -34,7 +34,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
         <TextView
-            android:id="@+id/date_textView"
+            android:id="@+id/date_text_View"
             android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:text="@string/example_date"

@@ -15,15 +15,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class HomeActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class HomeActivity extends AppCompatActivity {
+    private DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -34,16 +37,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private void setupDrawerContent(NavigationView navigationView) {
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        selectDrawerItem(menuItem);
-                        return true;
-                    }
-                });
-    }
+
 
     @Override
     public void onBackPressed() {
@@ -62,13 +56,6 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -78,8 +65,6 @@ public class HomeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    @SuppressWarnings("StatementWithEmptyBody")
 
 
     public void selectDrawerItem(MenuItem menuItem) {
@@ -97,11 +82,11 @@ public class HomeActivity extends AppCompatActivity {
                 fragmentClass = HomeFragment.class;
                 break;
             case R.id.nav_help:
+                fragmentClass = HomeFragment.class;
                 break;
             default:
                 fragmentClass = HomeFragment.class;
         }
-
         try {
             fragment = (Fragment) fragmentClass.newInstance();
         } catch (Exception e) {
@@ -115,8 +100,18 @@ public class HomeActivity extends AppCompatActivity {
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);
         // Set action bar title
-        //setTitle(menuItem.getTitle());
+        setTitle(menuItem.getTitle());
         // Close the navigation drawer
         drawer.closeDrawers();
     }
+    private void setupDrawerContent(NavigationView navigationView) {
+            navigationView.setNavigationItemSelectedListener(
+                    new NavigationView.OnNavigationItemSelectedListener() {
+                        @Override
+                        public boolean onNavigationItemSelected(MenuItem menuItem) {
+                            selectDrawerItem(menuItem);
+                            return true;
+                        }
+                    });
+        }
 }
