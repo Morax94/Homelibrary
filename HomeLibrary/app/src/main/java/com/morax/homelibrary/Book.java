@@ -1,4 +1,7 @@
 package com.morax.homelibrary;
+
+import android.graphics.drawable.Drawable;
+
 public class Book {
 
 
@@ -8,9 +11,9 @@ public class Book {
     private double numberofpage;
     private String description;
     private String date;
-    private String image;
+    private Integer image;
 
-    public Book(String title,String author, String publisher, double numberofpage, String description,String date, String image){
+    public Book(String title,String author, String publisher, double numberofpage, String description,String date, Integer image){
         this.author = author;
         this.title = title;
         this.description=description;
@@ -31,7 +34,7 @@ public class Book {
         return description;
     }
 
-    public String getImage() {
+    public Integer getImage() {
         return image;
     }
     public String getTitle() {

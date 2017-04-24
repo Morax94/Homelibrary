@@ -31,14 +31,22 @@ public class HomeActivity extends AppCompatActivity {
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
+        Fragment fragment= null;
+        try {
+            fragment = (Fragment) HomeFragment.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.CotentFragment, fragment).commit();
+        setTitle("Bibloteka domowa");
+
 
     }
-
-
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -100,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);
         // Set action bar title
-        setTitle(menuItem.getTitle());
+        //setTitle(menuItem.getTitle());
         // Close the navigation drawer
         drawer.closeDrawers();
     }

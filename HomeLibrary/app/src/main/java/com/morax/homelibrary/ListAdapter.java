@@ -1,8 +1,10 @@
 package com.morax.homelibrary;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
 import android.support.v7.widget.RecyclerView;
@@ -12,12 +14,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             public TextView title, author, date;
-
+            public ImageView image;
             public MyViewHolder(View view) {
                 super(view);
                 title = (TextView) view.findViewById(R.id.title_textView);
                 author = (TextView) view.findViewById(R.id.author_textView);
                 date = (TextView) view.findViewById(R.id.date_text_View);
+                image = (ImageView)view.findViewById(R.id.book_imageView);
 
             }
         }
@@ -41,6 +44,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             holder.title.setText(book.getTitle());
             holder.author.setText(book.getAuthor());
             holder.date.setText(book.getDate());
+            holder.image.setImageResource(book.getImage());
         }
 
         @Override

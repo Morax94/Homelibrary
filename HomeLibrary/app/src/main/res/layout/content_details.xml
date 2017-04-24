@@ -15,14 +15,15 @@
         android:layout_marginRight="250dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@mipmap/ic_launcher"
         android:contentDescription="@string/contentDescription"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/author_editText_Details"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/Title_editText_Details"
@@ -36,13 +37,15 @@
         android:enabled="false"
         android:inputType="text"
         android:maxLines="1"
+        android:singleLine="true"
         android:text="@string/example_title"
         app:layout_constraintBottom_toTopOf="@+id/author_textView_Details"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:theme="@android:style/TextAppearance.Holo.WindowTitle" />
 
     <TextView
         android:id="@+id/author_textView_Details"
@@ -93,7 +96,7 @@
         app:layout_constraintHorizontal_bias="0.449" />
 
     <EditText
-        android:id="@+id/publiser_editText_Details"
+        android:id="@+id/publisher_editText_Details"
         android:layout_width="177dp"
         android:layout_height="37dp"
         android:layout_marginBottom="9dp"
@@ -107,7 +110,7 @@
         app:layout_constraintBottom_toTopOf="@+id/date_textView_Details"
         app:layout_constraintLeft_toRightOf="@+id/imageButton"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.543" />
+        app:layout_constraintHorizontal_bias="0.8" />
 
     <EditText
         android:id="@+id/author_editText_Details"
@@ -144,7 +147,7 @@
         android:layout_height="wrap_content"
         android:text="@string/details_publisher"
         android:layout_marginBottom="-1dp"
-        app:layout_constraintBottom_toTopOf="@+id/publiser_editText_Details"
+        app:layout_constraintBottom_toTopOf="@+id/publisher_editText_Details"
         app:layout_constraintLeft_toRightOf="@+id/imageButton"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -165,17 +168,17 @@
         app:layout_constraintHorizontal_bias="0.187" />
 
     <TextView
-        android:id="@+id/description_editText_Details"
+        android:id="@+id/description_textView_Details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/details_description"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/description_editText_Details"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.023" />
+        app:layout_constraintHorizontal_bias="0.023"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/description_editText_Details" />
 
     <EditText
         android:id="@+id/description_editText_Details"
@@ -185,6 +188,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+        android:enabled="false"
         android:inputType="textMultiLine"
         android:text="@string/example_description"
         app:layout_constraintBottom_toBottomOf="parent"
