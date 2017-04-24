@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:clickable="true"
     android:weightSum="1">
 
     <ImageView
@@ -23,19 +24,17 @@
             android:id="@+id/title_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/example_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+            android:text="@string/example_title" />
 
         <TextView
             android:id="@+id/author_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/example_author"
-            android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+            android:text="@string/example_author" />
 
         <TextView
             android:id="@+id/date_text_View"
-            android:layout_width="308dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/example_date"
             android:textAppearance="@style/TextAppearance.AppCompat.Notification.Time" />

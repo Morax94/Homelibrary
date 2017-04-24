@@ -1,4 +1,5 @@
 package com.morax.homelibrary;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
                 title = (TextView) view.findViewById(R.id.title_textView);
                 author = (TextView) view.findViewById(R.id.author_textView);
                 date = (TextView) view.findViewById(R.id.date_text_View);
+
             }
         }
 
