@@ -81,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
         Class fragmentClass = null;
         switch (menuItem.getItemId()) {
             case R.id.nav_add_book:
-                fragmentClass = DetailsFragment.class;
+                fragmentClass = AddFragment.class;
                 break;
             case R.id.nav_browse:
                 fragmentClass = HomeFragment.class;

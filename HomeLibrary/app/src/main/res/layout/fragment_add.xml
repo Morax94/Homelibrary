@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButtonAdd"
         android:layout_width="143dp"
         android:layout_height="187dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="247dp"
         android:layout_marginEnd="250dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="250dp"
@@ -23,134 +23,165 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/author_editText_Details"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/Title_editText_Details"
+    <EditText
+        android:id="@+id/Title_editText_Add"
         android:layout_width="0dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="0dp"
         android:ems="10"
+        android:enabled="false"
+        android:inputType="text|textPostalAddress"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="@string/example_title"
-        app:layout_constraintBottom_toTopOf="@+id/author_textView_Details"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"/>
+        tools:theme="@android:style/TextAppearance.Holo.WindowTitle"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/author_textView_Add" />
 
     <TextView
-        android:id="@+id/author_textView_Details"
+        android:id="@+id/author_textView_Add"
         android:layout_width="52dp"
         android:layout_height="20dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
         android:text="@string/details_autor"
-        app:layout_constraintBottom_toTopOf="@+id/author_editText_Details"
-        app:layout_constraintHorizontal_bias="0.179"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="57dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/imageButtonAdd"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.042"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/author_editText_Add" />
 
-    <TextView
-        android:id="@+id/date_editText_Details"
+    <EditText
+        android:id="@+id/date_editText_Add"
         android:layout_width="162dp"
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
+        android:enabled="false"
+        android:inputType="date"
         android:text="@string/example_date"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintBottom_toTopOf="@+id/page_textView_Details"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/author_editText_Add"
+        app:layout_constraintLeft_toRightOf="@+id/imageButtonAdd"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
 
-    <TextView
-        android:id="@+id/page_editText_Details"
+    <EditText
+        android:id="@+id/page_editText_Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="53dp"
         android:ems="10"
+        android:enabled="false"
+        android:inputType="numberDecimal"
         android:text="@string/example_page"
-        app:layout_constraintBottom_toTopOf="@+id/description_editText_Details"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="236dp"
+        app:layout_constraintLeft_toRightOf="@+id/imageButtonAdd"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
 
-    <TextView
-        android:id="@+id/publisher_editText_Details"
+    <EditText
+        android:id="@+id/publisher_editText_Add"
         android:layout_width="177dp"
         android:layout_height="37dp"
         android:layout_marginBottom="9dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="41dp"
         android:ems="10"
+        android:enabled="false"
+        android:inputType="text"
         android:text="@string/example_publisher"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintBottom_toTopOf="@+id/date_textView_Details"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="131dp"
+        app:layout_constraintLeft_toRightOf="@+id/imageButtonAdd"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
 
-    <TextView
-        android:id="@+id/author_editText_Details"
+    <EditText
+        android:id="@+id/author_editText_Add"
         android:layout_width="169dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
         android:text="@string/example_author"
-        app:layout_constraintBottom_toTopOf="@+id/publiser_textView_Details"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintBottom_toTopOf="@+id/publiser_textView_Add"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="77dp"
+        android:layout_marginRight="49dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/imageButtonAdd"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <TextView
-        android:id="@+id/date_textView_Details"
+        android:id="@+id/date_textView_Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="131dp"
         android:text="@string/details_data"
         app:layout_constraintBottom_toTopOf="@+id/date_editText_Details"
         app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="168dp" />
 
     <TextView
-        android:id="@+id/publiser_textView_Details"
+        android:id="@+id/publiser_textView_Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-1dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="128dp"
         android:text="@string/details_publisher"
         app:layout_constraintBottom_toTopOf="@+id/publisher_editText_Details"
         app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="114dp" />
 
     <TextView
-        android:id="@+id/page_textView_Details"
+        android:id="@+id/page_textView_Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-11dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="149dp"
         android:text="@string/detalis_page"
         app:layout_constraintBottom_toTopOf="@+id/page_editText_Details"
         app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintLeft_toRightOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="220dp" />
 
     <TextView
-        android:id="@+id/description_textView_Details"
+        android:id="@+id/description_textView_Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
@@ -160,16 +191,20 @@
         app:layout_constraintBottom_toTopOf="@+id/description_editText_Details"
         app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="297dp" />
 
-    <TextView
-        android:id="@+id/description_editText_Details"
+    <EditText
+        android:id="@+id/description_editText_Add"
         android:layout_width="348dp"
         android:layout_height="189dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+        android:enabled="false"
+        android:inputType="textMultiLine"
         android:text="@string/example_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
