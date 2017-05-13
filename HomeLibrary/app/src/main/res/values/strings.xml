@@ -29,5 +29,6 @@
     <string name="example_page">100</string>
     <string name="example_description">Opis.Opis.Opis</string>
     <string name="contentDescription">książka</string>
+    <string name="pusty" />
 
 </resources>

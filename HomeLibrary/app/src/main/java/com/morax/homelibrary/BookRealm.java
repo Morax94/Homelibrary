@@ -10,18 +10,18 @@ public class BookRealm extends RealmObject {
     private String title;
     private String author;
     private String publisher;
-    private double page;
-    private Date date;
+    private String page;
+    private String date;
     private String description;
-    private int image;
+    private String image;
     @Ignore
     private int sesionID;
     //geters and seters
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -51,19 +51,19 @@ public class BookRealm extends RealmObject {
         this.publisher = publisher;
     }
 
-    public double getPage() {
+    public String getPage() {
         return page;
     }
 
-    public void setPage(double page) {
+    public void setPage(String page) {
         this.page = page;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
