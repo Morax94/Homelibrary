@@ -1,5 +1,6 @@
 package com.morax.homelibrary;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
 import android.support.v7.widget.RecyclerView;
+
+import io.realm.BookRealmRealmProxy;
+
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
 
-        private List<Book> booksList;
+        private List<BookRealm> booksList;
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             public TextView title, author, date;
@@ -26,7 +30,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         }
 
 
-        public ListAdapter(List<Book> booksList) {
+        public ListAdapter(List<BookRealm> booksList) {
             this.booksList = booksList;
         }
 
@@ -40,11 +44,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-            Book book = booksList.get(position);
+            BookRealm book = booksList.get(position);
             holder.title.setText(book.getTitle());
             holder.author.setText(book.getAuthor());
             holder.date.setText(book.getDate());
-            holder.image.setImageResource(book.getImage());
+            if(book.getImage()!=null)
+            holder.image.setImageURI(Uri.parse(book.getImage()));
         }
 
         @Override

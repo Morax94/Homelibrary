@@ -17,13 +17,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
+
 public class HomeFragment extends Fragment{
-    public List<Book> books;
+    public List<BookRealm> books;
     RecyclerView recyclerView;
     ListAdapter mAdapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Realm.init(getContext());
+        Realm realm = Realm.getDefaultInstance();
         View view = inflater.inflate(R.layout.content_home, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.MRecyler);
         fillBooks();
@@ -36,14 +41,14 @@ public class HomeFragment extends Fragment{
         recyclerView.addOnItemTouchListener(new ListTouchListener(getContext(), recyclerView, new ListTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Book book = books.get(position);
+                BookRealm book = books.get(position);
                 Bundle bundle = new Bundle();
                 bundle.putString("title",book.getTitle());
                 bundle.putString("author",book.getAuthor());
                 bundle.putString("date",book.getDate());
-                bundle.putDouble("page",book.getNumberofpage());
+                bundle.putString("page",book.getPage());
                 bundle.putString("description",book.getDescription());
-                bundle.putInt("image",book.getImage());
+                bundle.putString("image",book.getImage());
                 bundle.putString("publisher",book.getPublisher());
 
 
@@ -57,7 +62,7 @@ public class HomeFragment extends Fragment{
                     e.printStackTrace();
                 }
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.CotentFragment, fragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.CotentFragment, fragment).addToBackStack(null).commit();
             }
 
             @Override
@@ -83,16 +88,20 @@ public class HomeFragment extends Fragment{
     }
 
     private void fillBooks() {
-        books = new ArrayList<>();
-        books.add(new Book("Pan Lodowego Ogrodu, tom1", "Jarosław Grzedowicz", "Fabryka Słów", 638, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2011", R.drawable.pl1));
-        books.add(new Book("Pan Lodowego Ogrodu, tom2", "Jarosław Grzedowicz", "Fabryka Słów", 538, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2011", R.drawable.pl2));
-        books.add(new Book("Pan Lodowego Ogrodu, tom3", "Jarosław Grzedowicz", "Fabryka Słów", 738, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2011", R.drawable.pl3));
-        books.add(new Book("Pan Lodowego Ogrodu, tom4", "Jarosław Grzedowicz", "Fabryka Słów", 580, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2001", R.drawable.pl3));
-        books.add(new Book("Lód", "Jacek Dukaj", "Wydawnictwo Literackie", 1050, "Opowiada czasy gdy do pierwszej wojny światowej nie doszło", "2012", R.drawable.lod));
-        books.add(new Book("Red Rising, tom1", "Pierce Brown", "Drageus Publishing House", 428, "O nie równości społecznej", "2016", R.drawable.rr1));
-        books.add(new Book("Red Rising, tom2", "Pierce Brown", "Drageus Publishing House", 428, "O nie równości społecznej", "2017", R.drawable.rr2));
-        books.add(new Book("Red Rising, tom3", "Pierce Brown", "Drageus Publishing House", 428, "O nie równości społecznej", "2018", R.drawable.rr3));
-    }
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<BookRealm> bookslist = realm.where(BookRealm.class).findAll();
+        books = bookslist;
+
+//        books = new ArrayList<>();
+//        books.add(new Book("Pan Lodowego Ogrodu, tom1", "Jarosław Grzedowicz", "Fabryka Słów", 638, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2011", R.drawable.pl1));
+//        books.add(new Book("Pan Lodowego Ogrodu, tom2", "Jarosław Grzedowicz", "Fabryka Słów", 538, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2011", R.drawable.pl2));
+//        books.add(new Book("Pan Lodowego Ogrodu, tom3", "Jarosław Grzedowicz", "Fabryka Słów", 738, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2011", R.drawable.pl3));
+//        books.add(new Book("Pan Lodowego Ogrodu, tom4", "Jarosław Grzedowicz", "Fabryka Słów", 580, "Książka Fantastyczna opowiadającz historię toczącąsię na innej planecie", "2001", R.drawable.pl3));
+//        books.add(new Book("Lód", "Jacek Dukaj", "Wydawnictwo Literackie", 1050, "Opowiada czasy gdy do pierwszej wojny światowej nie doszło", "2012", R.drawable.lod));
+//        books.add(new Book("Red Rising, tom1", "Pierce Brown", "Drageus Publishing House", 428, "O nie równości społecznej", "2016", R.drawable.rr1));
+//        books.add(new Book("Red Rising, tom2", "Pierce Brown", "Drageus Publishing House", 428, "O nie równości społecznej", "2017", R.drawable.rr2));
+//        books.add(new Book("Red Rising, tom3", "Pierce Brown", "Drageus Publishing House", 428, "O nie równości społecznej", "2018", R.drawable.rr3));
+     }
 
 
     public static HomeFragment newInstance() {
